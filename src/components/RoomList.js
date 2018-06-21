@@ -19,7 +19,7 @@ class RoomList extends Component{
    });
  }
 
- render() {
+ render () {
      return (
        <div>
  	       {this.state.rooms.map ((room,index) =>
