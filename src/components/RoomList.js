@@ -19,7 +19,11 @@ class RoomList extends Component{
    });
  }
 
+<<<<<<< HEAD
  render() {
+=======
+ render () {
+>>>>>>> checkpoint-1-roomlist
      return (
        <div>
  	       {this.state.rooms.map ((room,index) =>
