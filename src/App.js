@@ -19,26 +19,32 @@ class App extends Component {
     super(props);
     this.state = {
       activeRoom : '',
-      activeMessage: ''
+
+
     };
-  }
+    this.setActiveRoom = this.setActiveRoom.bind(this);
+      this.setMessage = this.setMessage.bind(this);
+    }
 
-  chosenRoom(room){
-    this.setState({room : this.state.activeRoom})
-  }
+    setActiveRoom(roomId) {
+      console.log(roomId)
+      this.setState({
+        activeRoom: roomId
 
-  setMessage(message) {
-    this.setState({ activeMessage: message })
-  }
+      })
+    }
+
+    setMessage(message) {
+      this.setState({ activeMessage: message })
+    }
 
   render() {
     return (
       <div className="App">
-        <header className= 'App-Header'>
-        <h1>Welcome to Bloc Chat</h1>
-        </header>
-        <RoomList firebase={firebase} activeRoom={this.state.activeRoom} chosenRoom={this.state.chosenRoom} />
-        <MessageList firebase={firebase} activeRoom={this.state.activeRoom} />}
+        <h1>Bloc Chat</h1>
+        <RoomList firebase= { firebase } createRoom={() => this.createRoom() } setActiveRoom={this.setActiveRoom } />
+        <MessageList firebase = { firebase } activeRoom={ this.state.activeRoom }  />
+
       </div>
     );
   }
