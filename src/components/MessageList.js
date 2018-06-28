@@ -54,7 +54,6 @@ class MessageList extends Component {
 
 
     render() {
-        //console.log(this.state.messages)
         return (
           <div>
             <h3>{ this.props.activeRoom ? this.props.activeRoom.name : 'Please select a room' }</h3>
