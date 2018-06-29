@@ -14,6 +14,7 @@ class MessageList extends Component {
             },
             newMessage: ''
         }
+
         this.messagesRef = this.props.firebase.database().ref('messages');
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -55,8 +56,9 @@ class MessageList extends Component {
 
     render() {
         return (
+
           <div>
-            <h3>{ this.props.activeRoom ? this.props.activeRoom.name : 'Please select a room' }</h3>
+          <h4>{this.props.activeRoom.name}</h4>
               <ul>
                 { this.state.messages.filter(message => message.roomId == this.props.activeRoom).map((message, index) => (<li key={index}> <b>{message.username}</b> <br /> {message.content} </li>),
                 )}
